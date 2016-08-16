@@ -1,62 +1,35 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function(){
+  var dropdownSearchElement = document.querySelector("[data-js='dropdown--search']");
+  var inputSearchElement = document.querySelector("[data-js='input__search']");
 
-  var mainElement = document.querySelector("[data-js='main']");
-  var navElement = document.querySelector("[data-js='nav']");
+  var dropdownData = ["Squirrel gifs", "Squirrel gifs tumblr", "Squirrel gifts", "Squirrel gifts gifs?"];
 
-  var navItems = [
-    {
-      name: "home",
-      link: "/home"
-    },
-    {
-      name: "about",
-      link: "/about"
-    },
-    {
-      name: "contact",
-      link: "/contact"
+  // After I have typed more than 2 chars i want to see the dropdown
+  inputSearchElement.addEventListener("keydown", function(e){
+    var inputTextValue = e.target.value;
+    if(inputTextValue.length > 2){
+      // Show me the dropdown!
+      var searchResultsHTML = "";
+      dropdownData.forEach(function(result){
+        // concat with RETURN value from function
+        var returnedHTML = createSearchDropdownItem(result);
+        searchResultsHTML += returnedHTML;
+      });
+      dropdownSearchElement.innerHTML = searchResultsHTML;
+      dropdownSearchElement.className = "dropdown--search dropdown--visible";
+    }else{
+      dropdownSearchElement.className = "dropdown--search";
     }
-  ]
+  });
 
-  var articleData = {
-    title: "Great Article Title!",
-    author: "Robin and Batman",
-    date: "July 1st, 2020",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  function createSearchDropdownItem(text){
+    return `
+      <li class="dropdown__item">
+        ${text}
+      </li>
+    `;
   }
 
-  var navItemsHTML = "";
-  navItems.forEach(function(navItem){
-    // Creating HTML inside of this loop
-    var navItemHTML = `
-      <a href="${navItem.link}">${navItem.name}</a>
-    `;
-    // "target" is only with events... so inside of
-    //   callback functions for addEventListener
-    // navElement.target.innerHTML = navItemHTML;
-
-    // Concat to variabled defined before and outside
-    //   of loop in order to have entire string
-    //   built before we add to the page.
-    navItemsHTML += navItemHTML;
-  })
-
-
-  // Creating much more readable templates.
-  // Reusable HTML with JS is happyfuntimes
-  var headingHTML = `
-    <article>
-      <h2>${articleData.title}</h2>
-      <h3>${articleData.author}</h3>
-      <time datetime="">${articleData.date}</time>
-      <p>${articleData.description}</p>
-    </article>
-  `;
-
-
-
-  mainElement.innerHTML = headingHTML;
-  navElement.innerHTML = navItemsHTML;
 });
