@@ -29,10 +29,11 @@
   background-color: white;
   border: 1px solid rgb(217, 217, 217);
   height: 40px;
+  line-height: 40px;
   font-family: sans-serif;
   font-size: 18px;
   outline: none;
-  padding: 15px 10px;
+  padding: 0 10px;
   vertical-align: top;
   width: 590px;
 }
@@ -57,4 +58,38 @@
   outline: none;
   padding: 10px;
   width: 40px;
+}
+
+/*
+  Search dropdown
+  - [x] width matches text input (590px)
+  - [x] border matches text input (1px solid rgb(217, 217, 217));
+  - [] above everything else by 1px (positioning?)
+  - [] do not display numbers from ol
+
+  Search dropdown item
+  - [x] height of 22px
+  - [x] font size 18px
+  - [] hover with grey background 238	238	238
+  - [x] padding left/right 10px
+*/
+
+.dropdown--search {
+  width: 590px;
+  border: 1px solid rgb(217, 217, 217);
+  border-top: 0;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.dropdown__item {
+  font-size: 18px;
+  height: 22px;
+  line-height: 22px;
+  padding: 0 10px;
+}
+
+.dropdown__item:hover {
+  background-color: rgb(238, 238, 238);
 }
