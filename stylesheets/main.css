@@ -4,22 +4,57 @@
 }
 
 /*
+  Container for the search form
+  - [x] right next to text input!!!
+*/
+
+.form--search {
+  font-size: 0;
+}
+
+/*
   Search text input
   - [x] Black text
   - [x] Sans Serif font
   - [x] White background
   - [x] 590px width
+  - [x] 40px height
   - [x] 1px solid grey border
   - [x] Padding top/bottom of 15px, left/right 10px (maybe line height 38px)
   - [x] Font size of ~18px
+  - [x] vertical align top: aligning with submit button
 */
 
 .input__search {
   background-color: white;
   border: 1px solid rgb(217, 217, 217);
+  height: 40px;
   font-family: sans-serif;
   font-size: 18px;
-  padding: 15px 10px;
-  width: 590px;
   outline: none;
+  padding: 15px 10px;
+  vertical-align: top;
+  width: 590px;
+}
+
+/*
+  Search input submit button
+  - [x] 18x18 search icon magnify
+  - [x] icon/text is white
+  - [x] 40x40 width/height
+  - [x] bg color of 66	133	244
+  - [x] padding 10x10
+  - [x] border radius (top right, bottom right) 3px
+*/
+
+.input__submit {
+  background-color: rgb(66, 133, 244);
+  border-radius: 0 3px 3px 0;
+  border: none;
+  color: white;
+  font-size: 18px;
+  height: 40px;
+  outline: none;
+  padding: 10px;
+  width: 40px;
 }
