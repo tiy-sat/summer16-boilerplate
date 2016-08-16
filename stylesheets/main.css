@@ -3,7 +3,23 @@
   box-sizing: border-box;
 }
 
+/*
+  Search text input
+  - [x] Black text
+  - [x] Sans Serif font
+  - [x] White background
+  - [x] 590px width
+  - [x] 1px solid grey border
+  - [x] Padding top/bottom of 15px, left/right 10px (maybe line height 38px)
+  - [x] Font size of ~18px
+*/
 
-.mainNavigation {
-  color: red;
+.input__search {
+  background-color: white;
+  border: 1px solid rgb(217, 217, 217);
+  font-family: sans-serif;
+  font-size: 18px;
+  padding: 15px 10px;
+  width: 590px;
+  outline: none;
 }
