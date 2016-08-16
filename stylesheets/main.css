@@ -2,3 +2,8 @@
 * {
   box-sizing: border-box;
 }
+
+
+.mainNavigation {
+  color: red;
+}
